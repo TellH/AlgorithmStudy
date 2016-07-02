@@ -37,9 +37,9 @@ public class Combination {
     }
 
     private void outputCombination() {
-        for (int i=0;i<n;i++){
-            if (zerones[i]==1)
-                System.out.print(src[i]+" ");
+        for (int i = 0; i < n; i++) {
+            if (zerones[i] == 1)
+                System.out.print(src[i] + " ");
         }
         System.out.println();
     }
@@ -48,9 +48,11 @@ public class Combination {
         int i;
         for (i = 0; i < n - 1; i++) {
             if (zerones[i] == 1 && zerones[i + 1] == 0) {
+                //将10组合变成01
                 zerones[i] = 0;
                 zerones[i + 1] = 1;
                 int ones = 0;
+                //将前面所有的1移到最右边
                 for (int j = 0; j < i; j++) {
                     if (zerones[j] == 1) ones++;
                 }
