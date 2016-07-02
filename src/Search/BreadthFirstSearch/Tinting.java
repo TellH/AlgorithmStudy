@@ -1,10 +1,8 @@
 package Search.BreadthFirstSearch;
 
-import java.util.PriorityQueue;
 import java.util.Queue;
 import java.util.Scanner;
 import java.util.concurrent.ArrayBlockingQueue;
-import java.util.concurrent.CountDownLatch;
 
 /**
  * Created by tlh on 2016/7/2.
@@ -70,8 +68,10 @@ public class Tinting {
     }
 
     public static void main(String[] args) {
+        //地图
         int[][] g = new int[SIZE_X][SIZE_Y];
         Scanner in = new Scanner(System.in);
+        //起点
         Note sp = new Note(in.nextInt(), in.nextInt());
         for (int i = 0; i < SIZE_X; i++) {
             for (int j = 0; j < SIZE_Y; j++) {

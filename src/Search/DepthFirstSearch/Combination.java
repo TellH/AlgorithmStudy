@@ -1,4 +1,4 @@
-package Search.DeepFirstSearch;
+package Search.DepthFirstSearch;
 
 import java.util.Scanner;
 

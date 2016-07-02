@@ -1,4 +1,4 @@
-package Search.DeepFirstSearch;
+package Search.DepthFirstSearch;
 
 import java.util.Scanner;
 
@@ -51,9 +51,11 @@ public class Permutation {
             //通过判断条件book[i] == 0，找到一个分支
             if (book[i] == 0) {
                 dest[step] = src[i];
+                //锁定该数
                 book[i] = 1;
                 //处理下一步
                 dfs(step + 1);
+                //因为要找出所有方案，所以必须要在每一次回溯时解锁该数
                 book[i] = 0;
             }
         }
