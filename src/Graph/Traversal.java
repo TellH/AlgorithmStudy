@@ -6,15 +6,16 @@ import java.util.concurrent.ArrayBlockingQueue;
 
 /**
  * Created by tlh on 2016/7/2.
+ * 图的遍历
  */
 public abstract class Traversal {
     private static final int INF = 999999;
-    int n;
-    int[][] g;
-    int[] book;
-    int visitNum;
+    private int n;
+    private int[][] g;
+    private int[] book;
+    private int visitNum;
 
-    public Traversal(int n, int[][] g) {
+    private Traversal(int n, int[][] g) {
         this.n = n;
         this.g = g;
         book = new int[n];
@@ -51,6 +52,7 @@ public abstract class Traversal {
 
     public void bfs(int startPoint) {
         Queue<Integer> queue = new ArrayBlockingQueue(n);
+        //访问起点并把起点入队
         queue.add(startPoint);
         visit(startPoint);
         book[startPoint] = 1;
