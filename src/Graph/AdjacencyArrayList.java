@@ -11,23 +11,11 @@ import java.util.Scanner;
  * next[i]保存编号为i的边的下一条边的编号
  */
 public class AdjacencyArrayList {
-    int n;
-    int m;
+    int n;//顶点数
+    int m;//边数
     Edge[] edges;//边数组
     int[] first;
     int[] next;
-
-    private static class Edge {
-        int u;//起点
-        int v;//终点
-        int w;//边的权值
-
-        public Edge(int u, int v, int w) {
-            this.u = u;
-            this.v = v;
-            this.w = w;
-        }
-    }
 
     public AdjacencyArrayList() {
         Scanner in = new Scanner(System.in);

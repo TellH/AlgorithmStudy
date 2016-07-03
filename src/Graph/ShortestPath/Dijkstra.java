@@ -16,7 +16,7 @@ import java.util.Scanner;
  * 对每一条边进行松弛操作。
  * 4.重复第3步，如果集合Q为空，算法结束。最终dis数组中的值就是源点到所有顶点的最短路径
  */
-public class Dijkstra {
+public abstract class Dijkstra {
     private static final int INF = 99999999;
     int n;//顶点数
     int m;//边数
@@ -75,7 +75,7 @@ public class Dijkstra {
         }
         book[srcVertex] = 1;
         //松弛n-1次即可
-        for (int i = 0; i < n - 2; i++) {
+        for (int i = 0; i < n - 1; i++) {
             //在Q集合的所有顶点中选择一个离源点s最近的顶点u（dis[u]最小）
             int v = findNearestVertex();
             //加入到集合P
@@ -88,8 +88,10 @@ public class Dijkstra {
                 }
             }
         }
-
+        onFinish(dis);
     }
+
+    abstract void onFinish(int[] dis) ;
 
     private int findNearestVertex() {
         queue.clear();
@@ -102,10 +104,14 @@ public class Dijkstra {
     }
 
     public static void main(String[] args) {
-        Dijkstra d = new Dijkstra();
+        Dijkstra d = new Dijkstra() {
+            @Override
+            void onFinish(int[] dis) {
+                for (int i = 0; i < n; i++) {
+                    System.out.print(dis[i]+" ");
+                }
+            }
+        };
         d.run(0);
-        for (int i = 0; i < d.n; i++) {
-            System.out.print(d.dis[i]+" ");
-        }
     }
 }
