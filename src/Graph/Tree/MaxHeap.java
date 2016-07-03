@@ -23,7 +23,7 @@ public class MaxHeap<T extends Comparable<T>> {
     }
 
     public MaxHeap(Class<T> clz) {
-        h = (T[]) Array.newInstance(clz, 101);
+        h = (T[]) Array.newInstance(clz, 100);
 //        h = new T[100];
         n = 0;
     }
