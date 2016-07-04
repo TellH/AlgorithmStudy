@@ -3,9 +3,7 @@ package Graph.MinimumSpanningTree;
 import Graph.Edge;
 import Graph.UnionFind;
 
-import java.lang.reflect.Array;
 import java.util.Arrays;
-import java.util.Comparator;
 import java.util.Scanner;
 
 /**
@@ -38,11 +36,14 @@ public class Kruskal {
             MST[count++] = edge;
             uf.merge(edge.u, edge.v);
         }
+        in.close();
+
+
+
         //输出结果
         for (Edge edge : MST) {
             System.out.print(edge.u + " " + edge.v + " " + edge.w);
             System.out.println();
         }
-        in.close();
     }
 }

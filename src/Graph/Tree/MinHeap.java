@@ -26,7 +26,7 @@ public class MinHeap<T extends Comparable<T>> {
         n = 0;
     }
 
-    private void swap(int i, int j, T[] h) {
+    protected void swap(int i, int j, T[] h) {
         T t = h[i];
         h[i] = h[j];
         h[j] = t;
@@ -86,6 +86,14 @@ public class MinHeap<T extends Comparable<T>> {
         if (bak.compareTo(value) > 0)
             swiftUp(pos, h);
         else swiftdown(pos, n, h);
+    }
+
+    public int size() {
+        return n;
+    }
+
+    public boolean isEmpty() {
+        return n == 0;
     }
 
     public T[] heapSortLarge2Small() {
