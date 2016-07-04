@@ -65,6 +65,15 @@ public class MaxHeap<T extends Comparable<T>> {
         }
     }
 
+    public void update(int pos, T value) {
+        T bak = h[pos];
+        if (value.compareTo(bak) == 0) return;
+        h[pos] = value;
+        if (bak.compareTo(value) < 0)
+            swiftUp(pos, h);
+        else swiftdown(pos, n, h);
+    }
+
     //往堆中添加元素
     public void push(T elem) {
         h[++n] = elem;
@@ -89,7 +98,7 @@ public class MaxHeap<T extends Comparable<T>> {
         while (last > 1) {
             swap(1, last, result);
             last--;
-            swiftdown(1,last, result);
+            swiftdown(1, last, result);
         }
         return result;
     }

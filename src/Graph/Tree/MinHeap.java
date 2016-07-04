@@ -79,6 +79,15 @@ public class MinHeap<T extends Comparable<T>> {
         return h[n + 1];
     }
 
+    public void update(int pos, T value) {
+        T bak = h[pos];
+        if (value.compareTo(bak) == 0) return;
+        h[pos] = value;
+        if (bak.compareTo(value) > 0)
+            swiftUp(pos, h);
+        else swiftdown(pos, n, h);
+    }
+
     public T[] heapSortLarge2Small() {
         T[] result = (T[]) Array.newInstance(h.getClass().getComponentType(), n + 1);
         int last = n;
