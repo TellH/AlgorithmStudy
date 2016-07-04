@@ -37,6 +37,8 @@ public class AdjacencyArrayList {
 
     public void add(int pos, int u, int v, int w) {
         edges[pos] = new Edge(u, v, w);
+        next[pos] = first[edges[pos].u];
+        first[edges[pos].u] = pos;
     }
 
     public AdjacencyArrayList() {
@@ -62,11 +64,11 @@ public class AdjacencyArrayList {
     public List<Edge> getAdjacentEdge(int vertex) {
         List<Edge> list = new ArrayList<>(m);
         int edgeNum = first[vertex];
-        list.add(edges[edgeNum]);
-        while (edgeNum != -1) {
-            edgeNum = next[edgeNum];
+//        list.add(edges[edgeNum]);
+        do {
             list.add(edges[edgeNum]);
-        }
+            edgeNum = next[edgeNum];
+        } while (edgeNum != -1);
         return list;
     }
 }
