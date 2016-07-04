@@ -12,6 +12,14 @@ public class UnionFind {
     int n;
     int[] roots;
 
+    public UnionFind(int n) {
+        this.n = n;
+        roots = new int[n];
+        for (int i = 0; i < roots.length; i++) {
+            roots[i] = i;
+        }
+    }
+
     protected void init() {
         Scanner in = new Scanner(System.in);
         n = in.nextInt();
@@ -41,6 +49,10 @@ public class UnionFind {
             //擒贼先擒王，右贼的王归属左贼的王
             roots[vRoot] = uRoot;
         }
+    }
+
+    public boolean connected(int i,int j){
+        return findRoot(i)==findRoot(j);
     }
 
     public UnionFind() {
