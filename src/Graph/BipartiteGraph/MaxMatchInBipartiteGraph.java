@@ -1,4 +1,7 @@
-package Graph;
+package Graph.BipartiteGraph;
+
+import Graph.AdjacencyArrayList;
+import Graph.Edge;
 
 import java.util.List;
 import java.util.Scanner;
@@ -59,6 +62,12 @@ public class MaxMatchInBipartiteGraph {
         List<Edge> adjacentEdge = edgeList.getAdjacentEdge(curVex);
         //尝试每一个与顶点curVex相连的顶点，根据二分图的定义，这些顶点一定是属于另一个集合的
         for (Edge edge : adjacentEdge) {
+//            if (color[edge.v] == -1) {
+//                color[edge.v] = ~color[curVex];
+//            } else if (color[edge.v] != color[curVex]) {
+//                System.out.println("该图不是二分图");
+//                return false;
+//            }
             if (book[edge.v] == 0) {
                 book[edge.v] = 1;
                 //如果点v未被匹配或者找到新的匹配，更新match数组，找到增广路立即return
