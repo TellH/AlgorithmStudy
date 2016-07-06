@@ -1,4 +1,4 @@
-package Graph;
+package Graph.UnionFind;
 
 import java.util.Scanner;
 
@@ -8,11 +8,11 @@ import java.util.Scanner;
  * 通过一个一维数组，维护一个森林。刚开始，森林的每个点都是孤立的，也可以理解为每个点就是一棵只有一个结点的数，
  * 之后通过两个结点间的连通性逐渐将小树合并。
  */
-public class UnionFind {
+public class QuickUnion {
     int n;
     int[] roots;
 
-    public UnionFind(int n) {
+    public QuickUnion(int n) {
         this.n = n;
         roots = new int[n];
         for (int i = 0; i < roots.length; i++) {
@@ -31,6 +31,9 @@ public class UnionFind {
     }
 
     private int findRoot(int v) {
+//        while (roots[v] != v) v = roots[v];
+//        return v;
+
         //自己是自己的王就是大王
         if (roots[v] == v)
             return v;
@@ -51,16 +54,16 @@ public class UnionFind {
         }
     }
 
-    public boolean connected(int i,int j){
-        return findRoot(i)==findRoot(j);
+    public boolean connected(int i, int j) {
+        return findRoot(i) == findRoot(j);
     }
 
-    public UnionFind() {
+    public QuickUnion() {
         init();
     }
 
     public static void main(String[] args) {
-        UnionFind unionFind = new UnionFind() {
+        QuickUnion unionFind = new QuickUnion() {
             @Override
             protected void init() {
                 super.init();
