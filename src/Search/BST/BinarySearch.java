@@ -1,8 +1,8 @@
-package Search;
+package Search.BST;
 
 /**
  * Created by tlh on 2016/7/7.
- * 基于二分查找的有序表
+ * 基于二分查找的线性有序表
  */
 public class BinarySearch<K extends Comparable, V> {
     private K[] keys;
