@@ -9,12 +9,12 @@ import java.util.Stack;
  * Created by tlh on 2016/7/9.
  * 图的深度优先搜索
  */
-public class DepthFirstPath {
+public class DepthFirstPaths {
     private boolean[] marked;
     private int[] edgeTo;
     private final int s;
 
-    public DepthFirstPath(Graph graph, int s) {
+    public DepthFirstPaths(Graph graph, int s) {
         this.s = s;
         marked = new boolean[graph.V()];
         edgeTo = new int[graph.V()];
