@@ -3,6 +3,12 @@ package Search.BST;
 /**
  * Created by tlh on 2016/7/7.
  * ref:"http://algs4.cs.princeton.edu/code/edu/princeton/cs/algs4/RedBlackBST.java.html"
+ * 红黑树的五个性质：
+ * 1）每个结点要么是红的，要么是黑的。
+ * 2）根结点是黑的。
+ * 3）每个叶结点，即空结点（NIL）是黑的。
+ * 4）如果一个结点是红的，那么它的俩个儿子都是黑的。红结点必须在左边
+ * 5）对每个结点，从该结点到其子孙结点的所有路径上包含相同数目的黑结点。
  */
 public class RedBlackBST<K extends Comparable, V> {
     private static final boolean RED = true;
@@ -20,6 +26,23 @@ public class RedBlackBST<K extends Comparable, V> {
             this.val = val;
             this.color = color;
         }
+
+        void cover(Node with) {
+            key = with.key;
+            val = with.val;
+        }
+
+        void replace(Node with) {
+            key = with.key;
+            val = with.val;
+            left = with.left;
+            right = with.right;
+        }
+    }
+
+    public class Student {
+        public int i;
+
     }
 
     private boolean isRed(Node x) {
@@ -77,7 +100,7 @@ public class RedBlackBST<K extends Comparable, V> {
     }
 
     //与二叉搜索树相同
-    private V get(K key) {
+    public V get(K key) {
         if (key == null) return null;
         Node p = root;
         int cmp;
@@ -90,5 +113,46 @@ public class RedBlackBST<K extends Comparable, V> {
         return null;
     }
 
+//    private Node[] _get(K key) {
+//        if (key == null) return null;
+//        Node[] p = new Node[2];
+//        p[0] = root;
+//        p[1] = p[0];
+//        int cmp;
+//        while (p[1] != null) {
+//            cmp = key.compareTo(p[1].key);
+//            if (cmp < 0) {
+//                p[0] = p[1];
+//                p[1] = p[1].left;
+//            } else if (cmp > 0) {
+//                p[0] = p[1];
+//                p[1] = p[1].right;
+//            } else return p;
+//        }
+//        return null;
+//    }
+//
+//    //删除节点
+//    public void delete(K key) {
+//        Node[] ps = _get(key);
+//        Node p = ps[1], front = ps[0];
+//        if (p == null) return;
+//        if (root == p) {
+//            root = null;
+//            return;
+//        }
+//        Node pt = front.right;
+//        if (pt == null) {
+//            p.replace(p.left);
+//        }
+//        while (pt.right != null) {
+//            front = pt;
+//            pt = pt.right;
+//        }
+//        front.right = pt.left;
+//        if (front.right != null)
+//            front.right.color = BLACK;
+//        p.cover(pt);
+//    }
 
 }

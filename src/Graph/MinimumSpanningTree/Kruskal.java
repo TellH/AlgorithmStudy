@@ -1,7 +1,7 @@
 package Graph.MinimumSpanningTree;
 
 import Graph.Edge;
-import Graph.UnionFind.QuickUnion;
+import Graph.UnionFind.QuickUnionFind;
 
 import java.util.Arrays;
 import java.util.Scanner;
@@ -27,7 +27,7 @@ public class Kruskal {
         //将各边按权值从小到大排序
         Arrays.sort(edges, (a, b) -> a.w - b.w);//使用lambda表达式简化匿名内部类
         //并查集，用于判断两个顶点是否连通，即判断两个顶点是否在同一个集合
-        QuickUnion uf = new QuickUnion(n);
+        QuickUnionFind uf = new QuickUnionFind(n);
         int count = 0;//记录加入生成树边的数目
         for (Edge edge : edges) {
             //如果两个顶点属于同一个集合，跳过这条边

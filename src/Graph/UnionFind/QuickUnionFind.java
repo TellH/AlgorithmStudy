@@ -8,11 +8,11 @@ import java.util.Scanner;
  * 通过一个一维数组，维护一个森林。刚开始，森林的每个点都是孤立的，也可以理解为每个点就是一棵只有一个结点的数，
  * 之后通过两个结点间的连通性逐渐将小树合并。
  */
-public class QuickUnion {
+public class QuickUnionFind {
     int n;
     int[] roots;
 
-    public QuickUnion(int n) {
+    public QuickUnionFind(int n) {
         this.n = n;
         roots = new int[n];
         for (int i = 0; i < roots.length; i++) {
@@ -58,12 +58,12 @@ public class QuickUnion {
         return findRoot(i) == findRoot(j);
     }
 
-    public QuickUnion() {
+    public QuickUnionFind() {
         init();
     }
 
     public static void main(String[] args) {
-        QuickUnion unionFind = new QuickUnion() {
+        QuickUnionFind unionFind = new QuickUnionFind() {
             @Override
             protected void init() {
                 super.init();

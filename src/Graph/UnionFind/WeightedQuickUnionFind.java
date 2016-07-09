@@ -7,16 +7,16 @@ import java.util.Stack;
  * Created by tlh on 2016/7/6.
  * 加权quick-union算法
  */
-public class WeightedQuickUnion {
+public class WeightedQuickUnionFind {
     int n;
     int[] roots;
     int[] weight;
 
-    public WeightedQuickUnion() {
+    public WeightedQuickUnionFind() {
         init();
     }
 
-    public WeightedQuickUnion(int n) {
+    public WeightedQuickUnionFind(int n) {
         this.n = n;
         roots = new int[n];
         weight = new int[n];
@@ -73,7 +73,7 @@ public class WeightedQuickUnion {
     }
 
     public static void main(String[] args) {
-        WeightedQuickUnion unionFind = new WeightedQuickUnion() {
+        WeightedQuickUnionFind unionFind = new WeightedQuickUnionFind() {
             @Override
             protected void init() {
                 super.init();
