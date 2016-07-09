@@ -1,4 +1,6 @@
-package Graph;
+package Graph.base;
+
+import Graph.base.Edge;
 
 import java.util.ArrayList;
 import java.util.List;

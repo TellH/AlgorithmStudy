@@ -1,5 +1,8 @@
 package Graph;
 
+import Graph.base.AdjacencyArrayList;
+import Graph.base.Edge;
+
 import java.util.List;
 import java.util.Scanner;
 

@@ -1,7 +1,7 @@
 package Graph.UnionFind;
 
-import Graph.Edge;
-import Graph.Graph;
+import Graph.base.Edge;
+import Graph.base.Graph;
 
 /**
  * Created by tlh on 2016/7/9.

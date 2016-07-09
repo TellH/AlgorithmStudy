@@ -1,7 +1,7 @@
 package Graph.BipartiteGraph;
 
-import Graph.Edge;
-import Graph.Graph;
+import Graph.base.Edge;
+import Graph.base.Graph;
 
 import java.util.Scanner;
 

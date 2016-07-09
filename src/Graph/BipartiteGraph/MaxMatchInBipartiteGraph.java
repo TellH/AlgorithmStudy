@@ -1,10 +1,8 @@
 package Graph.BipartiteGraph;
 
-import Graph.AdjacencyArrayList;
-import Graph.Edge;
-import Graph.Graph;
+import Graph.base.Edge;
+import Graph.base.Graph;
 
-import java.util.List;
 import java.util.Scanner;
 
 /**

@@ -1,4 +1,6 @@
-package Graph;
+package Graph.base;
+
+import Graph.Graph;
 
 public class Edge {
     public int u;//起点

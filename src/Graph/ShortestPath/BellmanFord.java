@@ -1,10 +1,8 @@
 package Graph.ShortestPath;
 
-import Graph.Edge;
-import Graph.Graph;
+import Graph.base.Edge;
+import Graph.base.Graph;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Queue;
 import java.util.Scanner;
 import java.util.concurrent.ArrayBlockingQueue;

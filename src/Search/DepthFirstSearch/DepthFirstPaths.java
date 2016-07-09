@@ -1,7 +1,7 @@
 package Search.DepthFirstSearch;
 
-import Graph.Graph;
-import Graph.Edge;
+import Graph.base.Graph;
+import Graph.base.Edge;
 
 import java.util.Stack;
 

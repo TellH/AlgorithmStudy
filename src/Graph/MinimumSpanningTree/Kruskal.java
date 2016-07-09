@@ -1,6 +1,6 @@
 package Graph.MinimumSpanningTree;
 
-import Graph.Edge;
+import Graph.base.Edge;
 import Graph.UnionFind.QuickUnionFind;
 
 import java.util.Arrays;
