@@ -10,7 +10,7 @@ public class Graph {
 
     private final int V;
     private int E;
-    public Bag<Edge>[] adj;
+    private Bag<Edge>[] adj;
 
     public Graph(int V) {
         this.V = V;
@@ -20,14 +20,23 @@ public class Graph {
             adj[v] = new Bag<Edge>();
         }
     }
-    public Graph(Scanner in) {
+
+    public Graph(Scanner in, boolean isDigragh) {
         this(in.nextInt());
-        int m=in.nextInt();
-        for (int i=0;i<m;i++){
-            addEdge(in.nextInt(),in.nextInt(),in.nextInt());
+        int m = in.nextInt();
+        for (int i = 0; i < m; i++) {
+            int u=in.nextInt();
+            int v=in.nextInt();
+            int w=in.nextInt();
+            addEdge(u, v, w);
+            if (!isDigragh)
+                addEdge(v, u, w);
         }
     }
-        public void addEdge(int u, int v, int w) {
+    public Graph(Scanner in) {
+        this(in,true);
+    }
+    public void addEdge(int u, int v, int w) {
         adj[u].add(new Edge(u, v, w));
         E++;
     }

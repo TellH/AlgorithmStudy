@@ -2,6 +2,7 @@ package Graph.BipartiteGraph;
 
 import Graph.AdjacencyArrayList;
 import Graph.Edge;
+import Graph.Graph;
 
 import java.util.List;
 import java.util.Scanner;
@@ -18,29 +19,20 @@ import java.util.Scanner;
  * 2.如果u与v匹配失败，再重新从点u的邻边中选一条边进行步骤一的尝试，直到点u匹配成功或尝试完所有过点u的所有边为止。
  */
 public class MaxMatchInBipartiteGraph {
-    int n;//顶点数
-    int m;//边数
-    int[] book;//用于DFS寻找增广路时记录走过的路径
-    int[] match;//记录匹配顶点
-    AdjacencyArrayList edgeList;//邻接表
+    int n;
+    private Graph graph;//图结构
+    private int[] book;//用于DFS寻找增广路时记录走过的路径
+    private int[] match;//记录匹配顶点
 
     public MaxMatchInBipartiteGraph() {
         Scanner in = new Scanner(System.in);
-        n = in.nextInt();//读入顶点数
-        m = in.nextInt();//读入边数
+        graph=new Graph(in,false);
+        n = graph.V();
+        int m = graph.E();
         book = new int[n];
         match = new int[n];
         for (int i = 0; i < match.length; i++) {
             match[i] = -1;//-1表示该顶点未匹配
-        }
-        edgeList = new AdjacencyArrayList(n, 2 * m);//无向图，邻接表边数可以为2m
-        //读入边
-        int count = 0;
-        for (int i = 0; i < m; i++) {
-            int u = in.nextInt();
-            int v = in.nextInt();
-            edgeList.add(count++, u, v, 1);
-            edgeList.add(count++, v, u, 1);//无向图，同一条边要添加两次不同方向
         }
         in.close();
     }
@@ -59,9 +51,8 @@ public class MaxMatchInBipartiteGraph {
 
     //关键方法，用DFS搜索增广路
     boolean dfs(int curVex) {
-        List<Edge> adjacentEdge = edgeList.getAdjacentEdge(curVex);
         //尝试每一个与顶点curVex相连的顶点，根据二分图的定义，这些顶点一定是属于另一个集合的
-        for (Edge edge : adjacentEdge) {
+        for (Edge edge : graph.adj(curVex)) {
 //            if (color[edge.v] == -1) {
 //                color[edge.v] = ~color[curVex];
 //            } else if (color[edge.v] != color[curVex]) {

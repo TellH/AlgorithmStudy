@@ -1,9 +1,8 @@
 package Graph.BipartiteGraph;
 
-import Graph.AdjacencyArrayList;
 import Graph.Edge;
+import Graph.Graph;
 
-import java.util.List;
 import java.util.Scanner;
 
 /**
@@ -15,29 +14,19 @@ import java.util.Scanner;
  * 如果不一致，继续往下DFS。
  */
 public class JudgeBipartiteGraph {
-    int n;//顶点数
-    int m;//边数
-    int[] book;//用于DFS寻找增广路时记录走过的路径
-    AdjacencyArrayList edgeList;//邻接表
-    int[] color;//记录各个顶点的颜色，1表示黑色，-1表示红色，0表示无色
-    boolean flag;//判断是否是二分图的标志
+    private Graph graph;//图结构
+    private int[] book;//用于DFS寻找增广路时记录走过的路径
+    private int[] color;//记录各个顶点的颜色，1表示黑色，-1表示红色，0表示无色
+    private boolean flag;//判断是否是二分图的标志
 
     public JudgeBipartiteGraph() {
         flag = true;//初始化的时候设置成true
         Scanner in = new Scanner(System.in);
-        n = in.nextInt();//读入顶点数
-        m = in.nextInt();//读入边数
+        graph = new Graph(in,false);//无向图，输入时要注意
+        int n = graph.V();
+        int m = graph.E();
         book = new int[n];
         color = new int[n];
-        edgeList = new AdjacencyArrayList(n, 2 * m);//无向图，邻接表边数可以为2m
-        //读入边
-        int count = 0;
-        for (int i = 0; i < m; i++) {
-            int u = in.nextInt();
-            int v = in.nextInt();
-            edgeList.add(count++, u, v, 1);
-            edgeList.add(count++, v, u, 1);//无向图，同一条边要添加两次不同方向
-        }
         in.close();
     }
 
@@ -45,9 +34,8 @@ public class JudgeBipartiteGraph {
         //如果当前节点还没有被染色，将它染成黑色
         if (color[curVex] == 0)
             color[curVex] = 1;
-        List<Edge> adjacentEdge = edgeList.getAdjacentEdge(curVex);
         //找出相邻的顶点v
-        for (Edge edge : adjacentEdge) {
+        for (Edge edge : graph.adj(curVex)) {
             //如果顶点v没有被染色，则染成与curvex不同的颜色
             if (color[edge.v] == 0) {
                 color[edge.v] = color[curVex] * -1;

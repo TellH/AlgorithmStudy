@@ -38,8 +38,6 @@ public class Kruskal {
         }
         in.close();
 
-
-
         //输出结果
         for (Edge edge : MST) {
             System.out.print(edge.u + " " + edge.v + " " + edge.w);

@@ -1,6 +1,7 @@
 package Graph.ShortestPath;
 
 import Graph.Edge;
+import Graph.Graph;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,17 +23,16 @@ import java.util.concurrent.ArrayBlockingQueue;
  */
 public abstract class BellmanFord {
     private static final int INF = 99999999;
+    private final int n;
+    private final int m;
+    private final Edge[] edges;
     private int[] dis;
-    private int n;
-    private int m;
-    private Edge[] edges;
-    private int[] first;
-    private int[] next;
-
+    private Graph graph;
     public BellmanFord() {
         Scanner in = new Scanner(System.in);
-        n = in.nextInt();
-        m = in.nextInt();
+        graph=new Graph(in);
+        n = graph.V();
+        m = graph.E();
         dis = new int[n];
         edges = new Edge[m];
         //初始化dis数组
@@ -41,8 +41,6 @@ public abstract class BellmanFord {
         //读入边
         for (int i = 0; i < m; i++) {
             edges[i] = new Edge(in.nextInt(), in.nextInt(), in.nextInt());
-            next[i] = first[edges[i].u];
-            first[edges[i].u] = i;
         }
         in.close();
     }
@@ -83,9 +81,8 @@ public abstract class BellmanFord {
         while (!queue.isEmpty()) {
             int startVex = queue.poll();
             book[startVex] = 0;//出队一定要把入队标志置零，因为同一个顶点可能会多次入队
-            List<Edge> ae = getAdjacentEdge(startVex);
             //尝试松弛每一条邻接边
-            for (Edge edge : ae) {
+            for (Edge edge : graph.adj(startVex)) {
                 //如果松弛成功
                 if (dis[edge.v] > dis[edge.u] + edge.w) {
                     dis[edge.v] = dis[edge.u] + edge.w;
@@ -98,17 +95,6 @@ public abstract class BellmanFord {
             }
         }
         onFinish(dis);
-    }
-
-    public List<Edge> getAdjacentEdge(int vertex) {
-        List<Edge> list = new ArrayList<>(m);
-        int edgeNum = first[vertex];
-        list.add(edges[edgeNum]);
-        while (edgeNum != -1) {
-            edgeNum = next[edgeNum];
-            list.add(edges[edgeNum]);
-        }
-        return list;
     }
 
     abstract void onFinish(int[] dis);
