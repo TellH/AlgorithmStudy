@@ -4,6 +4,7 @@ import Graph.base.Edge;
 import Graph.UnionFind.QuickUnionFind;
 
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.Scanner;
 
 /**
@@ -22,10 +23,17 @@ public class Kruskal {
         Edge[] MST = new Edge[n - 1];//生成树的边数组
         //读入边
         for (int i = 0; i < m; i++) {
-            edges[i] = new Edge(in.nextInt(), in.nextInt(), in.nextInt());
+            edges[i] = new Edge(in.nextInt(), in.nextInt(), in.nextDouble());
         }
         //将各边按权值从小到大排序
-        Arrays.sort(edges, (a, b) -> a.w - b.w);//使用lambda表达式简化匿名内部类
+        Arrays.sort(edges, new Comparator<Edge>() {
+            @Override
+            public int compare(Edge o1, Edge o2) {
+                if (o1.w - o2.w > 0) return 1;
+                else if (o1.w - o2.w == 0) return 0;
+                else return -1;
+            }
+        });//使用lambda表达式简化匿名内部类
         //并查集，用于判断两个顶点是否连通，即判断两个顶点是否在同一个集合
         QuickUnionFind uf = new QuickUnionFind(n);
         int count = 0;//记录加入生成树边的数目

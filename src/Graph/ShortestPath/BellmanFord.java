@@ -24,14 +24,14 @@ public abstract class BellmanFord {
     private final int n;
     private final int m;
     private final Edge[] edges;
-    private int[] dis;
+    private double[] dis;
     private Graph graph;
     public BellmanFord() {
         Scanner in = new Scanner(System.in);
         graph=new Graph(in);
         n = graph.V();
         m = graph.E();
-        dis = new int[n];
+        dis = new double[n];
         edges = new Edge[m];
         //初始化dis数组
         for (int i = 0; i < n; i++)
@@ -45,7 +45,7 @@ public abstract class BellmanFord {
 
     public void run(int srcVex) {
         dis[srcVex] = 0;
-        int[] bak = new int[n];
+        double[] bak = new double[n];
         for (int k = 0; k < n - 1; k++) {
             for (int i = 0; i < n; i++) bak[i] = dis[i];//备份dis数组
             for (int i = 0; i < m; i++) {
@@ -95,5 +95,5 @@ public abstract class BellmanFord {
         onFinish(dis);
     }
 
-    abstract void onFinish(int[] dis);
+    abstract void onFinish(double[] dis);
 }
