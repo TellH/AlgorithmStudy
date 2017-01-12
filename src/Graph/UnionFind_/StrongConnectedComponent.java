@@ -1,4 +1,4 @@
-package Graph.UnionFind;
+package Graph.UnionFind_;
 
 import Graph.base.Edge;
 import Graph.base.Graph;

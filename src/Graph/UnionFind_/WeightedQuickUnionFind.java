@@ -1,4 +1,4 @@
-package Graph.UnionFind;
+package Graph.UnionFind_;
 
 import java.util.Scanner;
 import java.util.Stack;
