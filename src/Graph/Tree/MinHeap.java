@@ -69,6 +69,12 @@ public class MinHeap<T extends Comparable<T>> {
         swiftUp(n, h);
     }
 
+    public T peek() {
+        if (n == 0)
+            return null;
+        return h[1];
+    }
+
     //删除堆顶元素
     public T pop() {
         if (n == 0)

@@ -80,6 +80,12 @@ public class MaxHeap<T extends Comparable<T>> {
         swiftUp(n, h);
     }
 
+    public T peek() {
+        if (n == 0)
+            return null;
+        return h[1];
+    }
+
     //删除堆顶元素
     public T pop() {
         if (n == 0)
@@ -115,5 +121,9 @@ public class MaxHeap<T extends Comparable<T>> {
             System.out.print(integer + " ");
         }
         in.close();
+    }
+
+    public int size() {
+        return n;
     }
 }
