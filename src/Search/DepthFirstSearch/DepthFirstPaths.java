@@ -30,13 +30,15 @@ public class DepthFirstPaths {
             }
         }
     }
-    public boolean hasPathTo(int v){
+
+    public boolean hasPathTo(int v) {
         return marked[v];
     }
-    public Iterable<Integer> pathTo(int v){
+
+    public Iterable<Integer> pathTo(int v) {
         if (!hasPathTo(v)) return null;
-        Stack<Integer> path=new Stack<>();
-        for (int x=v;x!=s;x=edgeTo[x]){
+        Stack<Integer> path = new Stack<>();
+        for (int x = v; x != s; x = edgeTo[x]) {
             path.push(x);
         }
         return path;

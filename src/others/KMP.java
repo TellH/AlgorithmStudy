@@ -18,7 +18,7 @@ public class KMP<T extends Comparable<T>> {
         int i = 0, j = 0;
         int[] next = getNext(pat);
         while (i < test.length && j < pat.length) {
-            if (j == -1 || test[i] == pat[j]) {
+            if (j == -1 || equals(test[i], pat[j])) {
                 i++;
                 j++;
             } else {

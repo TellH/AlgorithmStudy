@@ -67,7 +67,7 @@ public class QuickSort<T extends Comparable> extends AbstractSort {
         quickSort(left, i - 1);
         quickSort(i + 1, right);
     }
-
+/*
     public static void main(String[] args) {
         Integer[] inputArray;
         int n;
@@ -83,6 +83,40 @@ public class QuickSort<T extends Comparable> extends AbstractSort {
             System.out.print(qs.a[i] + " ");
         }
         System.out.println();
+    }*/
+
+    public QuickSort() {
     }
 
+    public void sort(int[] a, int left, int right) {
+        if (a == null || right <= left)
+            return;
+        int base = a[left];
+        int i = left + 1, j = right;
+        while (true) {
+            while (i < j && a[j] >= base)
+                j--;
+            while (i < j && a[i] <= base)
+                i++;
+            if (i != j) {
+                int temp = a[i];
+                a[i] = a[j];
+                a[j] = temp;
+            } else {
+                break;
+            }
+        }
+        a[left] = a[i];
+        a[i] = base;
+        sort(a, left, i - 1);
+        sort(a, i + 1, right);
+    }
+
+    public static void main(String[] args) {
+        int[] a = {4, 3, 34, 23, 56, 35, 45};
+        new QuickSort<Integer>().sort(a, 0, a.length - 1);
+        for (int i = 0; i < a.length; i++) {
+            System.out.print(a[i] + " ");
+        }
+    }
 }

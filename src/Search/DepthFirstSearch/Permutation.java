@@ -63,13 +63,13 @@ public class Permutation {
     }
 
     public static void main(String[] args) {
-        Scanner in=new Scanner(System.in);
-        int n=in.nextInt();
-        int[] src=new int[n];
-        for (int i=0;i<n;i++){
-            src[i]=in.nextInt();
+        Scanner in = new Scanner(System.in);
+        int n = in.nextInt();
+        int[] src = new int[n];
+        for (int i = 0; i < n; i++) {
+            src[i] = in.nextInt();
         }
-        Permutation p=new Permutation(n,src);
+        Permutation p = new Permutation(n, src);
         p.run();
         in.close();
     }

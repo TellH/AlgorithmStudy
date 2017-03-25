@@ -1,5 +1,6 @@
 package SwordToOffer;
 
+import javax.xml.crypto.dsig.keyinfo.RetrievalMethod;
 import java.util.Scanner;
 
 /**
@@ -48,5 +49,22 @@ public class T3 {
         }
         T3 t3 = new T3(a);
         System.out.println(t3.run(in.nextInt()));
+    }
+
+    public static class Solution {
+        public boolean Find(int target, int[][] array) {
+            if (array == null || array.length == 0)
+                return false;
+            int row = 0;
+            int col = array[0].length - 1;
+            while (row < array.length && col >= 0) {
+                if (target > array[row][col])
+                    row++;
+                else if (target < array[row][col])
+                    col--;
+                else return true;
+            }
+            return false;
+        }
     }
 }
