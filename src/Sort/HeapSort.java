@@ -2,6 +2,7 @@ package Sort;
 
 /**
  * Created by tlh on 2017/3/15.
+ * 数组下标从0开始
  */
 public class HeapSort {
     public void sort(int[] a) {
@@ -18,13 +19,14 @@ public class HeapSort {
     }
 
     private void shiftDown(int[] a, int start, int end) {
-        int sankIndex;
-        while (2 * start <= end) {
-            sankIndex = start;
-            if (a[sankIndex]< a[2 * start])
-                sankIndex = 2 * start;
-            if (2 * start + 1 <= end && a[sankIndex] < a[2 * start + 1])
-                sankIndex = 2 * start + 1;
+        while (true) {
+            int left = start * 2;
+            int right = start * 2 + 1;
+            int sankIndex = start;
+            if (left <= end && a[sankIndex] < a[left])
+                sankIndex = left;
+            if (right <= end && a[sankIndex] < a[right])
+                sankIndex = right;
             if (sankIndex != start) {
                 swap(start, sankIndex, a);
                 start = sankIndex;
@@ -40,7 +42,7 @@ public class HeapSort {
     }
 
     public static void main(String[] args) {
-        int[] a = {100, 4, 3, 34, 23, 56, 35, 45};
+        int[] a = {0, 4, 3, 34, 23, 56, 35, 45};
         new HeapSort().sort(a);
         for (int i = 0; i < a.length; i++) {
             System.out.print(a[i] + " ");

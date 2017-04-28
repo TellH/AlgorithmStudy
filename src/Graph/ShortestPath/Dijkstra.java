@@ -1,6 +1,5 @@
 package Graph.ShortestPath;
 
-import Graph.MinimumSpanningTree.Prim;
 import Graph.Tree.MinHeap;
 
 import java.util.Queue;
