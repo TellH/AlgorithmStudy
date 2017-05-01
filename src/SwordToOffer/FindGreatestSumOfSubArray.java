@@ -8,7 +8,6 @@ public class FindGreatestSumOfSubArray {
         int curSum = 0;
         int maxSum = Integer.MIN_VALUE;
         for (int i = 0; i < array.length; i++) {
-            int num = array[i];
             if (curSum <= 0) {
                 curSum = array[i];
             } else {
