@@ -39,6 +39,7 @@ public class JudgeCoincideInterval {
         for (int i = 0; i < list.size(); i++) {
             target[i] = list.get(i);
         }
+        // 二分查找
         int i1 = getIndex(src.low, target);
         int i2 = getIndex(src.high, target);
         if (i1 == -1 || i2 == -1) return false;
