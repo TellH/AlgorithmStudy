@@ -4,7 +4,7 @@ package SwordToOffer;
  * Created by tlh on 2017/3/14.
  */
 public class BinTree2OrderList {
-    public class TreeNode {
+    private class TreeNode {
         int val = 0;
         TreeNode left = null;
         TreeNode right = null;
