@@ -11,9 +11,7 @@ public class BinTree2OrderList {
 
         public TreeNode(int val) {
             this.val = val;
-
         }
-
     }
     TreeNode head = null;
     TreeNode realHead = null;
