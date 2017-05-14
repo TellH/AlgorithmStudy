@@ -6,7 +6,7 @@ import com.sun.net.httpserver.Authenticator;
  * Created by tlh on 2017/1/15.
  * 求二叉树的深度
  */
-public class T39_BinTreeDepth {
+public class BinTreeDepth {
     private class Node {
         private Node left;
         private Node right;

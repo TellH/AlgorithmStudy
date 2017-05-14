@@ -2,6 +2,7 @@ package SwordToOffer;
 
 /**
  * Created by tlh on 2017/3/28.
+ * 判断一颗二叉树是不是对称的
  */
 public class SymmetricalTree {
     public class TreeNode {

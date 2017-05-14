@@ -8,7 +8,7 @@ import java.util.Scanner;
 /**
  * Created by tlh on 2017/3/8.
  */
-public class T4ReplaceSpace {
+public class ReplaceSpace {
     public static class Solution {
         public static void main(String[] args) {
             Scanner in = new Scanner(System.in);

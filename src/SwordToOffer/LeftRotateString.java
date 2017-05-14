@@ -2,6 +2,7 @@ package SwordToOffer;
 
 /**
  * Created by tlh on 2017/3/25.
+ * 左旋字符串
  */
 public class LeftRotateString {
     public String LeftRotateString_(String str, int n) {

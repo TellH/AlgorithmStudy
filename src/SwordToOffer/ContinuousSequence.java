@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 /**
  * Created by tlh on 2017/3/21.
+ * 寻找和为某个值的递增序列
  */
 public class ContinuousSequence {
     public ArrayList<ArrayList<Integer>> FindContinuousSequence(int sum) {

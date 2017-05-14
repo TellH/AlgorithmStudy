@@ -5,6 +5,7 @@ import java.util.concurrent.LinkedBlockingQueue;
 
 /**
  * Created by tlh on 2017/3/11.
+ * 调整数组顺序使奇数位于偶数前面
  */
 public class ReOrderArray {
     public void reOrderArray(int[] array) {

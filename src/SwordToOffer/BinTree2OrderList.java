@@ -2,6 +2,7 @@ package SwordToOffer;
 
 /**
  * Created by tlh on 2017/3/14.
+ * 二叉树转双向链表
  */
 public class BinTree2OrderList {
     private class TreeNode {

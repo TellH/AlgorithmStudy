@@ -5,6 +5,7 @@ import java.util.List;
 
 /**
  * Created by tlh on 2017/3/21.
+ * 一个整型数组里除了两个数字之外，其他的数字都出现了两次
  */
 public class FindNumsAppearOnce {
     public void findNumsAppearOnce(int[] array, int num1[], int num2[]) {

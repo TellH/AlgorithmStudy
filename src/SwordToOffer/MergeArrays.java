@@ -10,13 +10,13 @@ import java.util.Scanner;
  * 解法：
  * 从后往前替换
  */
-public class T4 {
+public class MergeArrays {
     private final int l1;
     private final int l2;
     private int[] a1;
     private int[] a2;
 
-    private T4(int[] a1, int[] a2, int l1, int l2) {
+    private MergeArrays(int[] a1, int[] a2, int l1, int l2) {
         this.a1 = a1;
         this.a2 = a2;
         this.l1 = l1;
@@ -57,7 +57,7 @@ public class T4 {
         for (int i = 0; i < l2; i++) {
             a2[i] = in.nextInt();
         }
-        int[] result = new T4(a1, a2, l1, l2).run();
+        int[] result = new MergeArrays(a1, a2, l1, l2).run();
         for (int i = 0; i < l1 + l2; i++) {
             System.out.print(result[i] + " ");
         }

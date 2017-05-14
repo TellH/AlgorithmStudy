@@ -2,6 +2,7 @@ package SwordToOffer;
 
 /**
  * Created by tlh on 2017/3/13.
+ * 输入两棵二叉树A，B，判断B是不是A的子结构。
  */
 public class HasSubTree {
     public class TreeNode {

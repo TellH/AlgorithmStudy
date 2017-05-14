@@ -2,6 +2,7 @@ package SwordToOffer;
 
 /**
  * Created by tlh on 2017/3/30.
+ * 求二叉搜索树的第k个节点
  */
 public class KthNodeBST {
 

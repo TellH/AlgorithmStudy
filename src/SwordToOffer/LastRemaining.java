@@ -2,6 +2,7 @@ package SwordToOffer;
 
 /**
  * Created by tlh on 2017/3/26.
+ * 约瑟夫环
  */
 public class LastRemaining {
     public int LastRemaining_Solution(int n, int m) {

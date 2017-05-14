@@ -1,6 +1,5 @@
 package SwordToOffer;
 
-import javax.xml.crypto.dsig.keyinfo.RetrievalMethod;
 import java.util.Scanner;
 
 /**
@@ -14,12 +13,12 @@ import java.util.Scanner;
  * 每次跟数组的右上角那个数比较，如果给定的数比它小，排除数组的最后一列；如果给定的数比它大，排除数组的第一行；否则给定的数在数组中。
  * 如此循环，直到找到该数或排除玩数组的所有数为止。
  */
-public class T3 {
+public class BinSearchIn2DArray {
     private int[][] a;
     private int minRow;
     private int maxCol;
 
-    private T3(int[][] a) {
+    private BinSearchIn2DArray(int[][] a) {
         this.a = a;
         minRow = 0;
         maxCol = a[0].length - 1;
@@ -47,7 +46,7 @@ public class T3 {
                 a[i][j] = in.nextInt();
             }
         }
-        T3 t3 = new T3(a);
+        BinSearchIn2DArray t3 = new BinSearchIn2DArray(a);
         System.out.println(t3.run(in.nextInt()));
     }
 

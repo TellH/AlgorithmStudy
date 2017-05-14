@@ -17,7 +17,7 @@ import java.util.Scanner;
  * <p>
  * 最后，当有奇数个数据时，最小堆的堆顶是中位数；当有偶数个数据时，中位数时最小堆堆顶与最大堆堆顶之间的平均值。
  */
-public class T64_GetStreamMedian {
+public class GetStreamMedian {
     public static int getMedian(int[] a) {
         if (a.length == 0)
             throw new RuntimeException("No numbers are available.");
