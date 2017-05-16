@@ -26,7 +26,8 @@
 - [扑克牌顺子](src/SwordToOffer/IsContinuous.java)
 - [循环左移字符串](src/SwordToOffer/LeftRotateString.java)
 - [去链表环的入口](src/SwordToOffer/LoopList.java)
-- [实现能得到最小元素的栈](src/SwordToOffer/MinStack.java)
+- [实现能得到最小值的栈](src/SwordToOffer/MinStack.java)
+- [实现能得到最大值的队列](src/others/MaxElementQueue.java)
 - [找出数组中重复次数超过数组长度一半的那个数](src/SwordToOffer/MoreThanHalfNum.java)
 - [求乘幂](src/SwordToOffer/PowerMath.java)
 - [从左到右打印二叉树](src/SwordToOffer/PrintL2RBinTree.java)
@@ -44,4 +45,16 @@
 - [合并已排序的数组A和数组B到数组A中（从后往前填充数组A！）](src/SwordToOffer/MergeArrays.java)
 - [替换空格](src/SwordToOffer/ReplaceSpace.java)
 - [寻找数据流中的中位数](src/SwordToOffer/GetStreamMedian.java)
+
+
+### 其他
+
+- [大数相加](src/others/AddBigInteger.java)
+- [计算两个字符串之间的距离](src/others/CalculateStringDistance.java)
+- [求二叉树中节点的最大距离](src/others/GetBinTreeMaxDistance.java)
+- [最大公因数](src/others/GreatestCommonDivisor.java)
+- [求子数组的最大乘积](src/others/GreatestProductOfSubArray.java)
+- [判断区间重合](src/others/JudgeCoincideInterval.java)
+- [找出这个数组中每一个数右边的第一个比它大的数](src/others/MonotonePriorityStack.java)
+- [得到一个随机填充了1-100之间的数的数组并且保证不重复](src/others/RandomSetValueToArray.java)
 
