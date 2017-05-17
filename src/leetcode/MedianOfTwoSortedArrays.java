@@ -16,6 +16,7 @@ public class MedianOfTwoSortedArrays {
         int m = jA - iA + 1; // 数组A的长度
         int n = jB - iB + 1; // 数组B的长度
         if (n < m) return findKth(B, iB, jB, A, iA, jA, k); // 保证数组A长度比数组B长度小
+        if (k == 0) return B[0];
         if (m == 0) return B[k - 1]; // 当较小的数组跑完了，返回数组B的第k个
         if (k == 1) return Math.min(A[iA], B[iB]); // 返回第1个数
         // 将k分成两部分
@@ -30,9 +31,10 @@ public class MedianOfTwoSortedArrays {
     }
 
     public float getMedian(int[] A, int[] B) {
+        if (A == null || B == null) throw new RuntimeException("Invalid input.");
         int totalLen = A.length + B.length;
         if ((totalLen & 1) == 1) { // 总数组长度为奇数
-            return findKth(A, 0, A.length - 1, B, 0, B.length - 1, totalLen / 2);
+            return findKth(A, 0, A.length - 1, B, 0, B.length - 1, totalLen / 2 + 1);
         } else { // 总数组长度为偶数
             return (findKth(A, 0, A.length - 1, B, 0, B.length - 1, totalLen / 2) +
                     findKth(A, 0, A.length - 1, B, 0, B.length - 1, totalLen / 2 + 1)) / 2.0f;
@@ -40,6 +42,6 @@ public class MedianOfTwoSortedArrays {
     }
 
     public static void main(String[] args) {
-        System.out.println(new MedianOfTwoSortedArrays().getMedian(new int[]{1, 2, 3, 4, 5, 6}, new int[]{2, 3, 4, 5}));
+        System.out.println(new MedianOfTwoSortedArrays().getMedian(new int[]{}, new int[]{1, 2, 3, 4, 5}));
     }
 }
