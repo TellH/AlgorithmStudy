@@ -8,6 +8,7 @@ package leetcode;
  * 从数组A和B分别取第k/2个数，当A[k/2-1] < B[k/2-1],则A的前k/2个元素必定在合并后的数组的前k个元素内，舍弃这A的前k/2个元素。
  * 否则，舍弃B中前k/2个数。
  * 接下来，递归在剩下的(m+n-k/2)的元素中找第(k-k/2)元素。
+ * https://www.jiuzhang.com/qa/1768/
  */
 public class MedianOfTwoSortedArrays {
     // 找到第K个元素
@@ -17,6 +18,7 @@ public class MedianOfTwoSortedArrays {
         if (n < m) return findKth(B, iB, jB, A, iA, jA, k); // 保证数组A长度比数组B长度小
         if (m == 0) return B[k - 1]; // 当较小的数组跑完了，返回数组B的第k个
         if (k == 1) return Math.min(A[iA], B[iB]); // 返回第1个数
+        // 将k分成两部分
         int lenA = Math.min(k / 2, m); // 取数组A的前lenA个元素
         int lenB = k - lenA; // 取数组B的前lenB个元素
         int pa = iA + lenA - 1; // 数组A的第lenA个元素
