@@ -18,4 +18,8 @@ public class FindGreatestSumOfSubArray {
         }
         return maxSum;
     }
+
+    public static void main(String[] args) {
+        System.out.println(new FindGreatestSumOfSubArray().findGreatestSumOfSubArray(new int[]{-2, 11, -4, 16, -5, -2}));
+    }
 }

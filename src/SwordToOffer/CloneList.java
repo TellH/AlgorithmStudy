@@ -9,37 +9,8 @@ public class CloneList {
         int label;
         RandomListNode next = null;
         RandomListNode random = null;
-
         RandomListNode(int label) {
             this.label = label;
-        }
-
-    }
-
-    public class RandomListNodeWrapper extends RandomListNode {
-        final RandomListNode core;
-
-        public RandomListNodeWrapper(RandomListNode core) {
-            super(core.label);
-            this.core = core;
-        }
-
-        @Override
-        public boolean equals(Object o) {
-            if (this == o) return true;
-            if (!(o instanceof RandomListNode)) return false;
-            RandomListNode that = (RandomListNode) o;
-            if (label != that.label) return false;
-            if (next != null ? !next.equals(that.next) : that.next != null) return false;
-            return random != null ? random.equals(that.random) : that.random == null;
-        }
-
-        @Override
-        public int hashCode() {
-            int result = label;
-            result = 31 * result + (next != null ? next.hashCode() : 0);
-            result = 31 * result + (random != null ? random.hashCode() : 0);
-            return result;
         }
     }
 

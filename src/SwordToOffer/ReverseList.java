@@ -4,7 +4,7 @@ package SwordToOffer;
  * Created by tlh on 2017/3/12.
  */
 public class ReverseList {
-    public static class ListNode {
+    private static class ListNode {
         int val;
         ListNode next = null;
 

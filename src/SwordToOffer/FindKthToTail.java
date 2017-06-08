@@ -4,7 +4,7 @@ package SwordToOffer;
  * Created by tlh on 2017/3/11.
  */
 public class FindKthToTail {
-    public static class ListNode {
+    private static class ListNode {
         int val;
         ListNode next = null;
 

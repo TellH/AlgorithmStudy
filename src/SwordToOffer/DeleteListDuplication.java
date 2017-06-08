@@ -4,7 +4,7 @@ package SwordToOffer;
  * Created by tlh on 2017/3/28.
  */
 public class DeleteListDuplication {
-    public class ListNode {
+    private class ListNode {
         int val;
         ListNode next = null;
 

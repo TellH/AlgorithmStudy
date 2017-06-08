@@ -50,6 +50,15 @@
 
 - [求两个有序数组的中位数](src/Leetcode/MedianOfTwoSortedArrays.java)
 
+### 动态规划
+
+- [背包问题](src/dp/WordBreak.java)
+- [纸牌博弈](src/dp/Game.java)
+- [最长公共子序列](src/dp/LongestCommonSequence.java)
+- [最长递增子序列](src/dp/LongestIncreaseSequence.java)
+- [回文字符串的最小切分](src/dp/MinCutPalindrome.java)
+- [WordBreak](src/dp/WordBreak.java)
+
 ### 其他
 
 - [大数相加](src/others/AddBigInteger.java)

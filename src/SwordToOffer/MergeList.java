@@ -6,7 +6,7 @@ import Sort.Merge;
  * Created by tlh on 2017/3/12.
  */
 public class MergeList {
-    public static class ListNode {
+    private static class ListNode {
         int val;
         ListNode next = null;
 
