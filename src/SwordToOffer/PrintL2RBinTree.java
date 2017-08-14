@@ -22,32 +22,19 @@ public class PrintL2RBinTree {
         Queue<TreeNode> queue = new LinkedList<>();
         ArrayList<ArrayList<Integer>> result = new ArrayList<>();
         if (pRoot == null) return result;
-        int count = 1;
+        int count;
         queue.add(pRoot);
-        while (true) {
+        while (!queue.isEmpty()) {
             ArrayList<Integer> list = new ArrayList<>();
-            count = printLevel(queue, count, list);
+            count = queue.size();
+            for (; count > 0; count--) {
+                TreeNode node = queue.poll();
+                list.add(node.val);
+                if (node.left != null) queue.add(node.left);
+                if (node.right != null) queue.add(node.right);
+            }
             result.add(list);
-            if (count == 0) break;
         }
         return result;
-    }
-
-    private int printLevel(Queue<TreeNode> queue, int count, ArrayList<Integer> list) {
-        int cnt = 0;
-        for (int i = 0; i < count; i++) {
-            TreeNode node = queue.poll();
-            list.add(node.val);
-            cnt = addNode(queue, cnt, node.left);
-            cnt = addNode(queue, cnt, node.right);
-        }
-        return cnt;
-    }
-
-    private int addNode(Queue<TreeNode> queue, int count, TreeNode node) {
-        if (node == null) return count;
-        queue.offer(node);
-        count++;
-        return count;
     }
 }

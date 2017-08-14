@@ -5,6 +5,7 @@ package leetcode;
  * Populate each next pointer to point to its next right node. If there is no next right node, the next pointer should be set toNULL.
  * Initially, all next pointers are set toNULL.
  * You may only use constant extra space.
+ * 解题报告：利用上一层的next指针，逐层连接兄弟节点。
  */
 public class PopulatingNextRightPointersInEachNode {
     private class TreeLinkNode {
@@ -50,7 +51,4 @@ public class PopulatingNextRightPointersInEachNode {
         return null;
     }
 
-    public static void main(String[] args) {
-
-    }
 }

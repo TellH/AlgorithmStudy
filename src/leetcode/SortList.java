@@ -27,7 +27,7 @@ public class SortList {
         }
 
         private ListNode merge(ListNode p1, ListNode p2) {
-            ListNode p = null, head = null;
+            ListNode p = new ListNode(-1), head = p;
             if (p1 == null)
                 return p2;
             else if (p2 == null)
@@ -40,18 +40,12 @@ public class SortList {
                     p.next = p1;
                     break;
                 } else if (p1.val < p2.val) {
-                    if (head == null) head = p = p1;
-                    else {
-                        p.next = p1;
-                        p = p.next;
-                    }
+                    p.next = p1;
+                    p = p.next;
                     p1 = p1.next;
                 } else {
-                    if (head == null) head = p = p2;
-                    else {
-                        p.next = p2;
-                        p = p.next;
-                    }
+                    p.next = p2;
+                    p = p.next;
                     p2 = p2.next;
                 }
             }

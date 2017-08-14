@@ -7,6 +7,10 @@ package leetcode;
  * You must do this in-place without altering the nodes' values.
  * For example,
  * Given{1,2,3,4}, reorder it to{1,4,2,3}.
+ * <p>
+ * 解题报告：
+ * 用两个快慢指针找到链表的中间节点，然后将后半段链表反转，
+ * 然后合并两个链表,即将后半部分插入前半部分的奇数位置后面
  */
 public class ReorderList {
     private class ListNode {
@@ -19,16 +23,15 @@ public class ReorderList {
         }
     }
 
-    /**
-     * 用两个快慢指针找到链表的中间节点，然后将后半段链表反转，
-     * 然后合并两个链表,即将后半部分插入前半部分的奇数位置后面
-     */
     public void reorderList(ListNode head) {
         if (head == null || head.next == null)
             return;
+        // 找到链表的中点
         ListNode mid = findMid(head);
+        // 反转后半部分的链表
         ListNode postHead = reverseList(mid.next);
         mid.next = null;
+        // 合并两个链表
         merge(head, postHead);
     }
 

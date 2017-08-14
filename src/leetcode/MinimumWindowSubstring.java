@@ -9,6 +9,8 @@ import java.util.HashMap;
  * 给出source = "ADOBECODEBANC"，target = "ABC" 满足要求的解  "BANC"
  * Given a string S and a string T, find the minimum window in S
  * which will contain all the characters in T in complexity O(n).
+ * 解题报告：
+ * 两个指针，维护一个动态区间。右指针往后扫，记录匹配的次数，当匹配数等于目标字符串target的长度时，更新最小窗口，回缩左指针，直到不能回缩为止。
  */
 public class MinimumWindowSubstring {
     public String minWindow(String source, String target) {

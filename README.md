@@ -12,6 +12,11 @@
 - [序列化二叉树](src/SwordToOffer/SerializeBinTree.java)
 - [判断一颗二叉树是不是对称的](src/SwordToOffer/SymmetricalTree.java)
 - [求二叉树深度](src/SwordToOffer/BinTreeDepth.java)
+- [求二叉树节点值的和最大的路径（后序遍历）](src/leetcode/BinaryTreeMaximumPathSum.java)
+- [求二叉树的最小深度](src/leetcode/MinimumDepthOfBinTree.java)
+- [求二叉树的特定节点和的路径](src/leetcode/PathSum.java)
+- [将二叉树的同层节点链接成链表](src/leetcode/PopulatingNextRightPointersInEachNode.java)
+
 - [复杂链表的复制](src/SwordToOffer/CloneList.java)
 - [寻找和为某个值的递增序列](src/SwordToOffer/ContinuousSequence.java)
 - [删除有序链表中重复的节点](src/SwordToOffer/DeleteListDuplication.java)
@@ -48,7 +53,21 @@
 
 ### LeetCode
 
-- [求两个有序数组的中位数](src/Leetcode/MedianOfTwoSortedArrays.java)
+- [求两个有序数组的中位数](src/leetcode/MedianOfTwoSortedArrays.java)
+- [股票最大收益](src/leetcode/BestTimeToBuyAndSellStock.java)
+- [求二叉树节点值的和最大的路径（后序遍历）](src/leetcode/BinaryTreeMaximumPathSum.java)
+- [求二叉树的最小深度](src/leetcode/MinimumDepthOfBinTree.java)
+- [求二叉树的特定节点和的路径](src/leetcode/PathSum.java)
+- [将二叉树的同层节点链接成链表](src/leetcode/PopulatingNextRightPointersInEachNode.java)
+- [在无序数组中找出最长的连续递增序列（先把所有元素放到HashSet中，再向前搜索和向后搜索）](src/leetcode/LongestConsecutiveSequence.java)
+- [统计在点集内位于同一条直线的最多点数](src/leetcode/MaxPointsOnALine.java)
+- [字符串包含匹配的最小窗口](src/leetcode/MinimumWindowSubstring.java)
+- [求字符串中的回文子串](src/leetcode/PalindromePartitioning.java)
+- [链表重排（找链表中点，反转链表，合并链表）](src/leetcode/ReorderList.java)
+- [链表排序（归并排序，插入排序）](src/leetcode/SortList.java)
+- [求集合的所有子集](src/leetcode/SubSets.java)
+- [分词](src/leetcode/WordBreak2.java)
+
 
 ### 动态规划
 
