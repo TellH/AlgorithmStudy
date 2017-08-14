@@ -16,7 +16,6 @@
 - [求二叉树的最小深度](src/leetcode/MinimumDepthOfBinTree.java)
 - [求二叉树的特定节点和的路径](src/leetcode/PathSum.java)
 - [将二叉树的同层节点链接成链表](src/leetcode/PopulatingNextRightPointersInEachNode.java)
-
 - [复杂链表的复制](src/SwordToOffer/CloneList.java)
 - [寻找和为某个值的递增序列](src/SwordToOffer/ContinuousSequence.java)
 - [删除有序链表中重复的节点](src/SwordToOffer/DeleteListDuplication.java)
