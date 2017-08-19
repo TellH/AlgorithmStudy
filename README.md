@@ -16,6 +16,7 @@
 - [求二叉树的最小深度](src/leetcode/MinimumDepthOfBinTree.java)
 - [求二叉树的特定节点和的路径](src/leetcode/PathSum.java)
 - [将二叉树的同层节点链接成链表](src/leetcode/PopulatingNextRightPointersInEachNode.java)
+- [求二叉树中节点的最大距离](src/others/GetBinTreeMaxDistance.java)
 - [复杂链表的复制](src/SwordToOffer/CloneList.java)
 - [寻找和为某个值的递增序列](src/SwordToOffer/ContinuousSequence.java)
 - [删除有序链表中重复的节点](src/SwordToOffer/DeleteListDuplication.java)
@@ -87,4 +88,5 @@
 - [判断区间重合](src/others/JudgeCoincideInterval.java)
 - [找出这个数组中每一个数右边的第一个比它大的数](src/others/MonotonePriorityStack.java)
 - [得到一个随机填充了1-100之间的数的数组并且保证不重复](src/others/RandomSetValueToArray.java)
+- [求数组中的第k个数](src/others/GetKthInArray.java)
 
