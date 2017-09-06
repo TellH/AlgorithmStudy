@@ -33,7 +33,7 @@ public class MergeArrays {
             if (p1 < 0)
                 a1[p2--] = a2[p3--];
             else if (p3 < 0)
-                a1[p2--] = a2[p1--];
+                a1[p2--] = a1[p1--];
             else {
                 int t1 = a1[p1];
                 int t2 = a2[p3];

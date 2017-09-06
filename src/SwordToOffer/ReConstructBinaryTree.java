@@ -70,7 +70,7 @@ public class ReConstructBinaryTree {
         return reConstructBinaryTree(pre, 0, pre.length - 1, in, 0, in.length - 1, map);
     }
 
-    public static TreeNode reConstructBinaryTree(int[] pre, int ps, int pe, int[] in, int is, int ie, Map<Integer, Integer> map) {
+    private static TreeNode reConstructBinaryTree(int[] pre, int ps, int pe, int[] in, int is, int ie, Map<Integer, Integer> map) {
         if (ps > pe)
             return null;
         TreeNode root = new TreeNode(pre[ps]);
@@ -91,6 +91,29 @@ public class ReConstructBinaryTree {
                 root.right = reConstructBinaryTree(pre, i - startIn + startPre + 1, endPre, in, i + 1, endIn);
                 break;
             }
+        return root;
+    }
+
+    // 中序遍历和后序遍历
+    public TreeNode buildTree(int[] inorder, int[] postorder) {
+        if (postorder == null | inorder == null || postorder.length != inorder.length)
+            return null;
+        HashMap<Integer, Integer> map = new HashMap<>();
+        for (int i = 0; i < inorder.length; i++) {
+            map.put(inorder[i], i);
+        }
+        return reConstructBinaryTreePost(postorder, 0, postorder.length - 1, inorder, 0, inorder.length - 1, map);
+    }
+
+    private TreeNode reConstructBinaryTreePost(int[] postorder, int ps, int pe, int[] inorder, int is, int ie,
+                                               HashMap<Integer, Integer> map) {
+        if (ps > pe)
+            return null;
+        TreeNode root = new TreeNode(postorder[pe]);
+        Integer index = map.get(postorder[pe]);
+        // 右边下标-左边下标+1=元素个数，因为包含了root节点要再减去1
+        root.left = reConstructBinaryTreePost(postorder, ps, ps + index - is, inorder, is, index - 1, map);
+        root.right = reConstructBinaryTreePost(postorder, ps + index - is + 1, pe - 1, inorder, index + 1, ie, map);
         return root;
     }
 }
